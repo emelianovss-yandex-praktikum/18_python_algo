@@ -1,13 +1,13 @@
 def solution(string, sub_string):
     """
     Надо найти подстроку в строке в любой последовательности
-    >>> solution("hello world", "row")
-    True
-    >>> solution("hello world", "wor")
-    True
-    >>> solution("hello world", "war")
     False
     """
+    for s in sub_string:
+        string = string.replace(s, "%")
+    print(string)
+    return "%" * len(sub_string) in string
+
 
 """
 product
@@ -18,3 +18,9 @@ product
 """
 replace
 """
+
+
+if __name__ == '__main__':
+    print(solution("hello world", "wor"))
+    print(solution("hello world", "orw"))
+    print(solution("hello world", "war"))

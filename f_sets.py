@@ -19,6 +19,13 @@ def solution_1():
     >>> solution_1()
     employer_05
     """
+    max_ = -1
+    set_A = set(A.keys())
+    set_B = set(B.keys())
+    two = set_A.intersection(set_B)
+    for d in zip([A, B]):
+        max_ = ([max_, *map(lambda x: d[x], set(d.keys()).difference(two))])
+
     ...
 
 """
